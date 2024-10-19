@@ -12,7 +12,6 @@ app = FastAPI()
 
 # Load the saved model
 classify_model = tf.keras.models.load_model("neural_network_model_classification.h5")
-regression_model = tf.keras.models.load_model("regression.h5")
 
 # Define input data structure
 class ModelInput(BaseModel):
