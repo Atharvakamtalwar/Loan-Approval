@@ -3,12 +3,19 @@ import tensorflow as tf
 from pydantic import BaseModel
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
 
 # Initialize FastAPI app
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_methods = [*],
+    allow_origins = [*]
+)
 
 # Load the saved model
 classify_model = tf.keras.models.load_model("neural_network_model_classification.h5")
