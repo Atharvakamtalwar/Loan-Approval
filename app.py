@@ -3,6 +3,8 @@ from pydantic import BaseModel
 import tensorflow as tf
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Initialize FastAPI app
 app = FastAPI()
